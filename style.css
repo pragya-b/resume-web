@@ -1,86 +1,150 @@
+/* Base Styling */
 body {
   font-family: 'Quicksand', sans-serif;
-  background-color: #f8f2ff;
+  background: linear-gradient(180deg, #f8f2ff 0%, #f0e6ff 100%);
   color: #3a2d4f;
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
 }
 
-header {
-  background-color: #d9c9f2;
-  padding: 30px;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-nav ul {
-  display: flex;
-  justify-content: center;
-  list-style-type: none;
-  padding: 0;
-  margin-bottom: 15px;
-}
-
-nav ul li {
-  margin: 0 15px;
-}
-
-nav a {
-  text-decoration: none;
-  color: #5e4b8b;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #2c1c48;
-}
-
-h1 {
-  margin: 0;
-  font-size: 2.2rem;
-}
-
-section {
-  padding: 40px 20px;
-  max-width: 800px;
-  margin: auto;
-  background-color: #ffffff;
-  margin-top: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  animation: fadeIn 1s ease forwards;
+h1, h2 {
+  font-weight: 700;
 }
 
 h2 {
   color: #6d4d9c;
   border-bottom: 2px solid #e1d5f6;
   padding-bottom: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
 }
 
-ul li {
-  margin-bottom: 10px;
-}
-
-a {
+h2 i {
+  margin-right: 10px;
   color: #6d4d9c;
 }
 
-a:hover {
-  text-decoration: underline;
+/* Header */
+header {
+  background: linear-gradient(90deg, #d8c4f2, #e6dbfb);
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
+nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+  gap: 15px;
+}
+
+nav ul li {
+  margin: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #5e4b8b;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+  background-color: #e0cdfc;
+  transform: scale(1.05);
+}
+
+/* Section Styling */
+section {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 40px auto;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+section:nth-of-type(even) {
+  background-color: #f9f3ff;
+}
+
+/* Contact Button */
+#contact a {
+  display: inline-block;
+  background-color: #cbb4f2;
+  color: #3a2d4f;
+  padding: 10px 18px;
+  margin-top: 10px;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#contact a:hover {
+  background-color: #b69be7;
+  transform: scale(1.05);
+}
+
+/* Footer */
 footer {
   text-align: center;
   padding: 20px;
   background-color: #e9dffb;
   color: #4e3a70;
   margin-top: 30px;
+  font-size: 0.95rem;
 }
 
-/* Subtle fade-in */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Lists */
+ul {
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+/* Fade-in Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Floating Let's Connect Button */
+.floating-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #bfa7f2;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.floating-btn:hover {
+  background-color: #a68be0;
+  transform: translateY(-2px);
 }
